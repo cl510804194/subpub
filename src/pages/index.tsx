@@ -8,11 +8,15 @@ import {
   Image,
   Button,
   Link,
+  SimpleGrid,
 } from "@chakra-ui/react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Pagination } from "swiper";
+import { useState } from "react";
+import { buttonHover, textNormalStyle } from "@/theme/style";
+
 import "swiper/css/pagination";
 import styles from "@/styles/Home.module.css";
 
@@ -24,6 +28,11 @@ import minyuan from "@/assets/images/minyuan.png";
 import guide from "@/assets/images/guide.svg";
 import contract from "@/assets/images/contract.svg";
 import community from "@/assets/images/community.svg";
+import guideNormal from "@/assets/images/guideNormal.svg";
+import fileActive from "@/assets/images/fileActive.png";
+import communityActive from "@/assets/images/communityActive.svg";
+import contractActive from "@/assets/images/contractActive.svg";
+
 import rightArrow from "@/assets/images/rightArrow.svg";
 import rightArrowPurple from "@/assets/images/rightArrowPurple.svg";
 import rightArrowWhite from "@/assets/images/rightArrowWhite.svg";
@@ -31,13 +40,27 @@ import rightArrowBlack from "@/assets/images/rightArrowBlack.svg";
 import juaner from "@/assets/images/juaner.png";
 import brix from "@/assets/images/brix.png";
 import fintPoints from "@/assets/images/fintPoints.png";
+import unionsCircle from "@/assets/images/unionsCircle.png";
+import tip from "@/assets/images/tip.svg";
 import group1 from "@/assets/images/group1.png";
 import group2 from "@/assets/images/group2.svg";
 import group3 from "@/assets/images/group3.svg";
 import group4 from "@/assets/images/group4.svg";
-import { useState } from "react";
-import { buttonHover } from "@/theme/style";
-const inter = Inter({ subsets: ["latin"] });
+import wechat from "@/assets/images/wechat.svg";
+import wechat2 from "@/assets/images/wechat2.svg";
+import discord from "@/assets/images/discord.svg";
+import redbook from "@/assets/images/redbook.svg";
+import jike from "@/assets/images/jike.svg";
+
+const unions = [
+  "治理公会",
+  "媒体公会",
+  "市场公会",
+  "运营公会",
+  "设计公会",
+  "产研公会",
+  "翻译公会",
+];
 
 const NumberItem = ({ label, value }: { label: string; value: string }) => {
   return (
@@ -52,7 +75,15 @@ const NumberItem = ({ label, value }: { label: string; value: string }) => {
   );
 };
 
-const WhereLinkItem = ({ imgSrc, text }: { imgSrc: string; text: string }) => {
+const WhereLinkItem = ({
+  imgSrc,
+  activeImgSrc,
+  text,
+}: {
+  imgSrc: string;
+  activeImgSrc: string;
+  text: string;
+}) => {
   const [isHover, setIsHover] = useState(false);
   return (
     <Stack
@@ -83,7 +114,7 @@ const WhereLinkItem = ({ imgSrc, text }: { imgSrc: string; text: string }) => {
           objectFit="contain"
           width="24px"
           height="24px"
-          src={imgSrc}
+          src={isHover ? activeImgSrc : imgSrc}
           alt=""
         />
       </Flex>
@@ -142,12 +173,7 @@ const SwiperItem = () => {
 
 export default function Home() {
   return (
-    <Flex
-      flexDirection="column"
-      alignItems="center"
-      as="main"
-      paddingTop="102px"
-    >
+    <Flex flexDirection="column" alignItems="center" as="main">
       {/* swiper */}
       <Swiper
         pagination={{
@@ -176,10 +202,26 @@ export default function Home() {
             RW实验室倡导联合全球的数字游民探索者，包括个人、团队、企业、其他组织的资源，构建一个数字游民社区，社区目前有远程工作招聘这个核心模块，希望不断自组织生长涌现出一系列关于数字游民的产品和服务，引领更多人加入数字游民，成为RW实验室新公民。
           </Text>
           <Flex flexWrap="wrap">
-            <WhereLinkItem imgSrc={guide} text="RW新手指南" />
-            <WhereLinkItem imgSrc={file} text="RW使用说明书" />
-            <WhereLinkItem imgSrc={community} text="RW社区体系" />
-            <WhereLinkItem imgSrc={contract} text="RW社区公约" />
+            <WhereLinkItem
+              imgSrc={guideNormal}
+              activeImgSrc={guide}
+              text="RW新手指南"
+            />
+            <WhereLinkItem
+              imgSrc={file}
+              activeImgSrc={fileActive}
+              text="RW使用说明书"
+            />
+            <WhereLinkItem
+              imgSrc={community}
+              activeImgSrc={communityActive}
+              text="RW社区体系"
+            />
+            <WhereLinkItem
+              imgSrc={contract}
+              activeImgSrc={contractActive}
+              text="RW社区公约"
+            />
           </Flex>
         </Stack>
         <Flex direction="column" width="404px">
@@ -225,12 +267,14 @@ export default function Home() {
           <Button
             width="115px"
             height="40px"
-            background="blue.100"
+            background="blue.200"
             borderRadius="8px"
             display="flex"
             justifyContent="center"
             alignItems="center"
-            _hover={buttonHover}
+            _hover={{
+              background: "blue.100",
+            }}
           >
             <Text
               color="white.100"
@@ -271,11 +315,14 @@ export default function Home() {
           <Button
             width="115px"
             height="40px"
-            background="blue.100"
+            background="blue.200"
             borderRadius="8px"
             display="flex"
             justifyContent="center"
             alignItems="center"
+            _hover={{
+              background: "blue.100",
+            }}
           >
             <Text
               color="white.100"
@@ -561,6 +608,182 @@ export default function Home() {
             </Stack>
           </Stack>
         </Flex>
+      </Flex>
+      {/* ecology */}
+      <Flex
+        marginTop="154px"
+        width="1200px"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <Stack spacing="42px" width="620px">
+          <Text fontSize="40px" fontWeight="700">
+            共建生态圈
+          </Text>
+          <SimpleGrid columns={5} spacingX="30px" spacingY="18px">
+            {unions.map((item) => {
+              return (
+                <Flex
+                  width="100px"
+                  height="40px"
+                  justifyContent="center"
+                  alignItems="center"
+                  background="white.200"
+                  border="1px solid"
+                  borderColor="white.300"
+                  borderRadius="26px"
+                  color="purple.100"
+                  key={item}
+                >
+                  {item}
+                </Flex>
+              );
+            })}
+          </SimpleGrid>
+          <Stack spacing="18px">
+            <Stack direction="row" spacing="11px">
+              <Image src={tip} alt="" />
+              <Text color="purple.100" fontSize="14px" fontWeight="500">
+                RW实验室的“研究员”们
+              </Text>
+            </Stack>
+
+            <Stack direction="row" spacing="11px">
+              <Box>👉🏻</Box>
+              <Text fontSize="14px" fontWeight="500" lineHeight="23px">
+                RW实验室是一个原生的远程办公团队，从招募到协作工作，我们全都是在线上完成，团队成员之间甚至没有见过面
+              </Text>
+            </Stack>
+            <Stack direction="row" spacing="11px">
+              <Box>👉🏻</Box>
+              <Text fontSize="14px" fontWeight="500" lineHeight="23px">
+                我们秉持着对数字游民求职社区的美好共识，基于人与人之间最基本的信任，建立了一套不断成熟的远程协作体系，我们不仅仅是远程工作的倡导者，更是远程办公的探索者。
+              </Text>
+            </Stack>
+            <Stack direction="row" spacing="11px">
+              <Box>👉🏻</Box>
+              <Text fontSize="14px" fontWeight="500" lineHeight="23px">
+                我们希望能够集结认同数字游民生活方式的“共识者”，一起推动RW实验室的成长，能够在满足数字游民经济需求的同时高度关注精神需求，
+                <Box as="span" color="purple.100">
+                  塑造一个有凝聚力的社区圈子，打造有力的对外影响与传播。
+                </Box>
+              </Text>
+            </Stack>
+          </Stack>
+        </Stack>
+        <Image width="378px" height="378px" src={unionsCircle} alt="" />
+      </Flex>
+      {/* how to become builder */}
+      <Flex
+        flexDirection="column"
+        marginTop="174px"
+        width="1200px"
+        alignItems="center"
+      >
+        <Text fontSize="40px" fontWeight="700">
+          如何成为共建者？
+        </Text>
+        <Stack
+          direction="row"
+          spacing="78px"
+          marginTop="64px"
+          marginBottom="44px"
+        >
+          <Stack direction="row" spacing="16px">
+            <Text fontSize="48px" fontWeight="700">
+              01
+            </Text>
+            <Text {...textNormalStyle}>
+              成为RW实验室社区成员，加入RW实验室社群
+            </Text>
+          </Stack>
+          <Stack direction="row" spacing="16px">
+            <Text fontSize="48px" fontWeight="700">
+              02
+            </Text>
+            <Text {...textNormalStyle}>
+              根据自己的需求加入感兴趣的社群主题群，积极参与社区活动
+            </Text>
+          </Stack>
+          <Stack direction="row" spacing="16px">
+            <Text fontSize="48px" fontWeight="700">
+              03
+            </Text>
+            <Text {...textNormalStyle}>
+              了解RW实验室后选择成为社群的贡献者，赚取贝壳的同时，推动社区不断完善与壮大
+            </Text>
+          </Stack>
+          <Stack direction="row" spacing="16px">
+            <Text fontSize="48px" fontWeight="700">
+              04
+            </Text>
+            <Text {...textNormalStyle}>
+              赚取贝壳或者购买贝壳后，前往游民市集购买求职、咨询等服务
+            </Text>
+          </Stack>
+        </Stack>
+        <Button
+          width="200px"
+          height="60px"
+          background="blue.200"
+          borderRadius="8px"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          _hover={{
+            background: "blue.100",
+          }}
+        >
+          <Text
+            color="white.100"
+            fontWeight="400"
+            fontSize="14px"
+            marginRight="10px"
+          >
+            Discord加入我们
+          </Text>
+          <Image width="19px" height="10px" src={rightArrowWhite} alt="" />
+        </Button>
+      </Flex>
+      <Box
+        height="0px"
+        width="100%"
+        marginTop="68px"
+        borderBottom="1px dashed rgba(0, 0, 0, 0.4)"
+      />
+      {/* contact us */}
+      <Flex
+        width="1200px"
+        justifyContent="space-between"
+        alignItems="center"
+        marginTop="107px"
+        marginBottom="60px"
+      >
+        <Text fontSize="28px" fontWeight="700">
+          联系我们
+        </Text>
+        <Stack direction="row" spacing="68px">
+          <Stack justify="center" alignItems="center">
+            <Image src={wechat} alt="" />
+            <Text {...textNormalStyle}>微信</Text>
+          </Stack>
+          <Stack justify="center" alignItems="center">
+            <Image src={wechat2} alt="" />
+            <Text {...textNormalStyle}>公众号</Text>
+          </Stack>
+          <Stack justify="center" alignItems="center">
+            <Image src={discord} alt="" />
+            <Text {...textNormalStyle}>discord</Text>
+          </Stack>
+          <Stack justify="center" alignItems="center">
+            <Image src={redbook} alt="" />
+            <Text {...textNormalStyle}>小红书</Text>
+          </Stack>
+          <Stack justify="center" alignItems="center">
+            <Image src={jike} alt="" />
+            <Text {...textNormalStyle}>即刻</Text>
+          </Stack>
+        </Stack>
       </Flex>
     </Flex>
   );

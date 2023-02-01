@@ -24,7 +24,9 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <ChakraProvider theme={theme}>
         <Header />
-        <Component {...pageProps} />
+        <Box paddingTop="102px">
+          <Component {...pageProps} />
+        </Box>
       </ChakraProvider>
     </Box>
   );

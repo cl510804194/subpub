@@ -22,6 +22,19 @@ export const buttonHover = {
   cursor: "pointer",
 };
 
+export const textNormalStyle = {
+  fontSize: "14px",
+  fontWeight: "400",
+  lineHeight: "23px",
+};
+export const textTitleStyle = {
+  fontSize: "48px",
+  fontWeight: "700",
+};
+export const textSubTitleStyle = {
+  fontSize: "40px",
+  fontWeight: "700",
+};
 // 单行文本溢出
 export const ellipsis: BoxProps = {
   overflow: "hidden",

@@ -19,9 +19,12 @@ const themeConfig = {
     },
     blue: {
       "100": "#4E47DB",
+      "200": "#716DF7",
     },
     white: {
       "100": "#ffffff",
+      "200": "#F1F0FE",
+      "300": "#5A57C6",
     },
   },
   breakpoints: {
