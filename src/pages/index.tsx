@@ -1,4 +1,4 @@
-import { Inter } from "@next/font/google";
+import { Inter } from '@next/font/google';
 import {
   Box,
   Divider,
@@ -9,52 +9,53 @@ import {
   Button,
   Link,
   SimpleGrid,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { Pagination } from "swiper";
-import { useState } from "react";
-import { buttonHover, textNormalStyle } from "@/theme/style";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Pagination } from 'swiper';
+import { useState } from 'react';
+import { buttonHover, textNormalStyle } from '@/theme/style';
 
-import "swiper/css/pagination";
-import styles from "@/styles/Home.module.css";
+import 'swiper/css/pagination';
+import styles from '@/styles/Home.module.css';
 
-import file from "@/assets/images/file.png";
-import banner1 from "@/assets/images/banner1.png";
-import banner2 from "@/assets/images/banner2.png";
-import banner3 from "@/assets/images/banner3.png";
-import minyuan from "@/assets/images/minyuan.png";
-import guide from "@/assets/images/guide.svg";
-import contract from "@/assets/images/contract.svg";
-import community from "@/assets/images/community.svg";
-import guideNormal from "@/assets/images/guideNormal.svg";
-import fileActive from "@/assets/images/fileActive.png";
-import communityActive from "@/assets/images/communityActive.svg";
-import contractActive from "@/assets/images/contractActive.svg";
+import file from '@/assets/images/file.png';
+import banner1 from '@/assets/images/banner1.png';
+import banner2 from '@/assets/images/banner2.png';
+import banner3 from '@/assets/images/banner3.png';
+import minyuan from '@/assets/images/minyuan.png';
+import guide from '@/assets/images/guide.svg';
+import contract from '@/assets/images/contract.svg';
+import community from '@/assets/images/community.svg';
+import guideNormal from '@/assets/images/guideNormal.svg';
+import fileActive from '@/assets/images/fileActive.png';
+import communityActive from '@/assets/images/communityActive.svg';
+import contractActive from '@/assets/images/contractActive.svg';
 
-import rightArrow from "@/assets/images/rightArrow.svg";
-import rightArrowPurple from "@/assets/images/rightArrowPurple.svg";
-import rightArrowWhite from "@/assets/images/rightArrowWhite.svg";
-import rightArrowBlack from "@/assets/images/rightArrowBlack.svg";
-import juaner from "@/assets/images/juaner.png";
-import brix from "@/assets/images/brix.png";
-import fintPoints from "@/assets/images/fintPoints.png";
-import unionsCircle from "@/assets/images/unionsCircle.png";
-import tip from "@/assets/images/tip.svg";
-import group1 from "@/assets/images/group1.png";
-import group2 from "@/assets/images/group2.svg";
-import group3 from "@/assets/images/group3.svg";
-import group4 from "@/assets/images/group4.svg";
+import rightArrow from '@/assets/images/rightArrow.svg';
+import rightArrowPurple from '@/assets/images/rightArrowPurple.svg';
+import rightArrowWhite from '@/assets/images/rightArrowWhite.svg';
+import rightArrowBlack from '@/assets/images/rightArrowBlack.svg';
+import juaner from '@/assets/images/juaner.png';
+import brix from '@/assets/images/brix.png';
+import fintPoints from '@/assets/images/fintPoints.png';
+import unionsCircle from '@/assets/images/unionsCircle.png';
+import tip from '@/assets/images/tip.svg';
+import group1 from '@/assets/images/group1.png';
+import group2 from '@/assets/images/group2.svg';
+import group3 from '@/assets/images/group3.svg';
+import group4 from '@/assets/images/group4.svg';
+import Card from '@/components/Card';
 
 const unions = [
-  "治理公会",
-  "媒体公会",
-  "市场公会",
-  "运营公会",
-  "设计公会",
-  "产研公会",
-  "翻译公会",
+  '治理公会',
+  '媒体公会',
+  '市场公会',
+  '运营公会',
+  '设计公会',
+  '产研公会',
+  '翻译公会',
 ];
 
 const NumberItem = ({ label, value }: { label: string; value: string }) => {
@@ -63,7 +64,7 @@ const NumberItem = ({ label, value }: { label: string; value: string }) => {
       <Text fontWeight="400" fontSize="16px">
         {label}
       </Text>
-      <Text fontWeight="700" fontSize={"46px"}>
+      <Text fontWeight="700" fontSize={'46px'}>
         {value}
       </Text>
     </Flex>
@@ -94,7 +95,7 @@ const WhereLinkItem = ({
       marginTop="34px"
       alignItems="center"
       _hover={{
-        cursor: "pointer",
+        cursor: 'pointer',
       }}
     >
       <Flex
@@ -102,7 +103,7 @@ const WhereLinkItem = ({
         alignItems="center"
         width="40px"
         height="40px"
-        background={isHover ? "purple.10" : "gray.50"}
+        background={isHover ? 'purple.10' : 'gray.50'}
         borderRadius="8px"
       >
         <Image
@@ -114,7 +115,7 @@ const WhereLinkItem = ({
         />
       </Flex>
       <Text
-        color={isHover ? "purple.100" : "black.100"}
+        color={isHover ? 'purple.100' : 'black.100'}
         fontWeight="500"
         fontSize="16px"
       >
@@ -257,7 +258,7 @@ export default function Home() {
             </Link>
             <Link color="blue.100" fontSize="16px" fontWeight="500">
               游民技能赋能
-            </Link>{" "}
+            </Link>{' '}
           </Stack>
           <Button
             width="115px"
@@ -268,7 +269,7 @@ export default function Home() {
             justifyContent="center"
             alignItems="center"
             _hover={{
-              background: "blue.100",
+              background: 'blue.100',
             }}
           >
             <Text
@@ -316,7 +317,7 @@ export default function Home() {
             justifyContent="center"
             alignItems="center"
             _hover={{
-              background: "blue.100",
+              background: 'blue.100',
             }}
           >
             <Text
@@ -348,19 +349,19 @@ export default function Home() {
           </Text>
           <Stack direction="column" spacing="15px">
             <Stack direction="row" spacing="15px" alignItems="center">
-              <Image src={group4} alt="" />{" "}
+              <Image src={group4} alt="" />{' '}
               <Text fontSize="14px" fontWeight="400" color="purple.100">
                 各个圈子的数字游民
               </Text>
             </Stack>
             <Stack direction="row" spacing="15px" alignItems="center">
-              <Image src={group3} alt="" />{" "}
+              <Image src={group3} alt="" />{' '}
               <Text fontSize="14px" fontWeight="400" color="purple.100">
                 线上/线下活动
               </Text>
             </Stack>
             <Stack direction="row" spacing="15px" alignItems="center">
-              <Image src={group2} alt="" />{" "}
+              <Image src={group2} alt="" />{' '}
               <Text fontSize="14px" fontWeight="400" color="purple.100">
                 第三方合作者
               </Text>
@@ -379,7 +380,7 @@ export default function Home() {
         >
           <Flex flexDirection="column" paddingRight="42px">
             <Stack direction="row" spacing="15px" alignItems="center">
-              <Image src={group3} alt="" />{" "}
+              <Image src={group3} alt="" />{' '}
               <Text fontSize="14px" fontWeight="400" color="purple.100">
                 热门活动
               </Text>
@@ -399,7 +400,7 @@ export default function Home() {
                 paddingBottom="2px"
                 borderBottom="1px solid #000000"
                 _hover={{
-                  textDecoration: "none",
+                  textDecoration: 'none',
                   ...buttonHover,
                 }}
               >
@@ -418,7 +419,19 @@ export default function Home() {
       </Flex>
       {/* skills */}
       <Flex marginTop="120px" width="1200px" justify="space-between">
-        <Flex
+        <Card
+          cover={banner2}
+          link="https://mp.weixin.qq.com/s/Y_7fuPOHuK9dIj8-E3Tibw"
+          title="RW游民技能ⁿ | 文字   让我过上了理想生活"
+          desc="自由撰稿跟作家有蛮大的差距。   自由撰稿，你写的东西就是以客户的需求为主。等你真的很有名气了，你这个名字放到哪里，大家都想要找你写稿的时候，那个时候才会是作家。所以，反过来说自由撰稿，也不会有太高的门槛，它的门槛还蛮低的，但是上限就比较高"
+        />
+        <Card
+          cover={banner3}
+          link="https://mp.weixin.qq.com/s/Y_7fuPOHuK9dIj8-E3Tibw"
+          title="RW实验室 | @所有人  想把我说给你听"
+          desc="我们一直在思考RW的意义和价值，也在思考怎么让RW发展地更好。在经过前期聚焦业务的快速发展之后，我们想选择停下来，和关注RW的你，一起真诚探讨更多的可能性。"
+        />
+        {/* <Flex
           padding="28px"
           width="580px"
           flexDirection="row"
@@ -505,7 +518,7 @@ export default function Home() {
             </Stack>
           </Flex>
           <Image width="260px" src={banner3} alt="" />
-        </Flex>
+        </Flex> */}
       </Flex>
       {/* intro */}
       <Flex marginTop="77px" width="1200px" justifyContent="space-between">
@@ -537,7 +550,7 @@ export default function Home() {
           </Stack>
         </Flex>
         <Flex width="360px" flexDirection="column">
-          {" "}
+          {' '}
           <Text fontSize="14px" fontWeight="400" lineHeight="23px">
             说来俗气！真的是很有缘分地偶然遇见了RW实验室，和各种想法丰盈的伙伴相识相知，然后一发不可收拾。逐步冒出远程工作的想法，开始真正找到了不只一份远程工作，开启了充满新鲜感的半旅居生活，也见证了很多伙伴的数字游民之旅，同频共振大抵如此。或许是来自于自身最真切的感知，我想，如果你想要探索崭新的生活方式，RW实验室可以是延展探索维度的望远镜，也可以是助力内观自我觉察的放大镜，助你向内向外都达成更美好的自我实现。
           </Text>
@@ -726,7 +739,7 @@ export default function Home() {
           justifyContent="center"
           alignItems="center"
           _hover={{
-            background: "blue.100",
+            background: 'blue.100',
           }}
         >
           <Text
