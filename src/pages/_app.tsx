@@ -5,6 +5,7 @@ import { Box, ChakraProvider } from "@chakra-ui/react";
 import { theme } from "@/theme/theme";
 import { Inter } from "@next/font/google";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"], weight: "400" });
 
@@ -27,6 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <Box paddingTop="102px">
           <Component {...pageProps} />
         </Box>
+        <Footer />
       </ChakraProvider>
     </Box>
   );

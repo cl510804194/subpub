@@ -46,11 +46,6 @@ import group1 from "@/assets/images/group1.png";
 import group2 from "@/assets/images/group2.svg";
 import group3 from "@/assets/images/group3.svg";
 import group4 from "@/assets/images/group4.svg";
-import wechat from "@/assets/images/wechat.svg";
-import wechat2 from "@/assets/images/wechat2.svg";
-import discord from "@/assets/images/discord.svg";
-import redbook from "@/assets/images/redbook.svg";
-import jike from "@/assets/images/jike.svg";
 
 const unions = [
   "治理公会",
@@ -744,46 +739,6 @@ export default function Home() {
           </Text>
           <Image width="19px" height="10px" src={rightArrowWhite} alt="" />
         </Button>
-      </Flex>
-      <Box
-        height="0px"
-        width="100%"
-        marginTop="68px"
-        borderBottom="1px dashed rgba(0, 0, 0, 0.4)"
-      />
-      {/* contact us */}
-      <Flex
-        width="1200px"
-        justifyContent="space-between"
-        alignItems="center"
-        marginTop="107px"
-        marginBottom="60px"
-      >
-        <Text fontSize="28px" fontWeight="700">
-          联系我们
-        </Text>
-        <Stack direction="row" spacing="68px">
-          <Stack justify="center" alignItems="center">
-            <Image src={wechat} alt="" />
-            <Text {...textNormalStyle}>微信</Text>
-          </Stack>
-          <Stack justify="center" alignItems="center">
-            <Image src={wechat2} alt="" />
-            <Text {...textNormalStyle}>公众号</Text>
-          </Stack>
-          <Stack justify="center" alignItems="center">
-            <Image src={discord} alt="" />
-            <Text {...textNormalStyle}>discord</Text>
-          </Stack>
-          <Stack justify="center" alignItems="center">
-            <Image src={redbook} alt="" />
-            <Text {...textNormalStyle}>小红书</Text>
-          </Stack>
-          <Stack justify="center" alignItems="center">
-            <Image src={jike} alt="" />
-            <Text {...textNormalStyle}>即刻</Text>
-          </Stack>
-        </Stack>
       </Flex>
     </Flex>
   );
