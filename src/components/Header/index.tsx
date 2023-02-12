@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Box,
   Flex,
@@ -8,52 +8,52 @@ import {
   LinkProps,
   TextProps,
   Button,
-} from "@chakra-ui/react";
-import { useRouter } from "next/router";
+} from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 
-import document from "@/assets/images/document.svg";
-import frame from "@/assets/images/frame.png";
+import document from '@/assets/images/document.svg';
+import frame from '@/assets/images/frame.png';
 
 export interface IProps {}
 
 const linkStyle: LinkProps & TextProps = {
-  color: "black.40",
-  fontSize: "14px",
-  lineHeight: "17px",
-  fontStyle: "normal",
+  color: 'black.40',
+  fontSize: '14px',
+  lineHeight: '17px',
+  fontStyle: 'normal',
 
   _hover: {
-    textDecoration: "none",
-    color: "black.80",
-    borderBottom: "1px solid",
-    borderColor: "black.80",
-    paddingBottom: "2px",
+    textDecoration: 'none',
+    color: 'black.80',
+    borderBottom: '1px solid',
+    borderColor: 'black.80',
+    paddingBottom: '2px',
   },
 };
 
 const linkActive: LinkProps & TextProps = {
-  color: "black.100",
-  borderBottom: "1px solid",
-  borderColor: "black.100",
-  paddingBottom: "2px",
+  color: 'black.100',
+  borderBottom: '1px solid',
+  borderColor: 'black.100',
+  paddingBottom: '2px',
 };
 
 const links = [
   {
-    label: "首页",
-    path: "/",
+    label: '首页',
+    path: '/',
   },
   {
-    label: "游民市集",
-    path: "/market",
+    label: '游民市集',
+    path: '/market',
   },
   {
-    label: "游民派对",
-    path: "/party",
+    label: '游民派对',
+    path: '/party',
   },
   {
-    label: "共建岛",
-    path: "/land",
+    label: '共建岛',
+    path: '/land',
   },
 ];
 
@@ -81,8 +81,8 @@ function Index({}: IProps) {
       <Flex
         justify="space-between"
         alignItems="center"
-        height={"102px"}
-        maxWidth={"1200px"}
+        height={'102px'}
+        maxWidth={'1200px'}
         margin="0 auto"
       >
         <Flex alignItems="center">

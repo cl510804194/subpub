@@ -174,7 +174,7 @@ function Index({}: IProps) {
       </Stack>
 
       {/* friends */}
-      <Stack marginTop="143px" spacing="88px" alignItems="center">
+      <Stack marginTop="80px" spacing="88px" alignItems="center">
         <Text {...textSubTitleStyle}>RW合作方</Text>
 
         <Stack direction="row" spacing="20px" justifyContent="center">
