@@ -1,7 +1,6 @@
 import { Inter } from '@next/font/google';
 import {
   Box,
-  Divider,
   Flex,
   Stack,
   Text,
@@ -48,6 +47,7 @@ import group3 from '@/assets/images/group3.svg';
 import group4 from '@/assets/images/group4.svg';
 import Card from '@/components/Card';
 import { links } from '@/config';
+import Divider from '@/components/Divider';
 
 const unions = [
   '治理公会',
