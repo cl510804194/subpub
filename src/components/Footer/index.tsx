@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import {
   Box,
   Divider,
@@ -9,16 +9,71 @@ import {
   Button,
   Link,
   SimpleGrid,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-import wechat from "@/assets/images/wechat.svg";
-import wechat2 from "@/assets/images/wechat2.svg";
-import discord from "@/assets/images/discord.svg";
-import redbook from "@/assets/images/redbook.svg";
-import jike from "@/assets/images/jike.svg";
-import { textNormalStyle } from "@/theme/style";
+import wechat from '@/assets/images/wechat.svg';
+import wechat2 from '@/assets/images/wechat2.svg';
+import discord from '@/assets/images/discord.svg';
+import redbook from '@/assets/images/redbook.svg';
+import jike from '@/assets/images/jike.svg';
+
+import wechatQrCode from '@/assets/images/wechatQrCode.jpeg';
+import gzhQrCode from '@/assets/images/gzhQrCode.jpeg';
+import jikeQrCode from '@/assets/images/jikeQrCode.jpeg';
+import redbookQrCode from '@/assets/images/redbookQrCode.png';
+import discordQrCode from '@/assets/images/discordQrCode.png';
+
+import { textNormalStyle } from '@/theme/style';
 
 export interface IProps {}
+
+const QrItem = ({
+  text,
+  img,
+  qrCode,
+}: {
+  text: string;
+  img: string;
+  qrCode: string;
+}) => {
+  const [isHover, setIsHover] = useState(false);
+
+  return (
+    <Stack
+      onMouseEnter={() => {
+        setIsHover(true);
+      }}
+      onMouseLeave={() => {
+        setIsHover(false);
+      }}
+      position="relative"
+      justify="center"
+      alignItems="center"
+    >
+      <Image src={img} alt="" />
+      <Text {...textNormalStyle}>{text}</Text>
+      {/* <Image
+        position="absolute"
+        top="-120px"
+        width="120px"
+        maxW="inherit"
+        // height="120px"
+        src={qrCode}
+        alt=""
+      /> */}
+      {isHover && (
+        <Image
+          position="absolute"
+          top="-130px"
+          width="120px"
+          // height="120px"
+          src={qrCode}
+          alt=""
+        />
+      )}
+    </Stack>
+  );
+};
 
 function Index({}: IProps) {
   return (
@@ -41,7 +96,13 @@ function Index({}: IProps) {
           联系我们
         </Text>
         <Stack direction="row" spacing="68px">
-          <Stack justify="center" alignItems="center">
+          <QrItem img={wechat} text={'微信'} qrCode={wechatQrCode} />
+          <QrItem img={wechat2} text={'公众号'} qrCode={gzhQrCode} />
+          <QrItem img={discord} text={'discord'} qrCode={discordQrCode} />
+          <QrItem img={redbook} text={'小红书'} qrCode={redbookQrCode} />
+          <QrItem img={jike} text={'即刻'} qrCode={jikeQrCode} />
+
+          {/* <Stack justify="center" alignItems="center">
             <Image src={wechat} alt="" />
             <Text {...textNormalStyle}>微信</Text>
           </Stack>
@@ -60,7 +121,7 @@ function Index({}: IProps) {
           <Stack justify="center" alignItems="center">
             <Image src={jike} alt="" />
             <Text {...textNormalStyle}>即刻</Text>
-          </Stack>
+          </Stack> */}
         </Stack>
       </Flex>
     </>

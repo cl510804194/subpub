@@ -47,6 +47,7 @@ import group2 from '@/assets/images/group2.svg';
 import group3 from '@/assets/images/group3.svg';
 import group4 from '@/assets/images/group4.svg';
 import Card from '@/components/Card';
+import { links } from '@/config';
 
 const unions = [
   '治理公会',
@@ -697,32 +698,32 @@ export default function Home() {
           marginTop="64px"
           marginBottom="44px"
         >
-          <Stack direction="row" spacing="16px">
-            <Text fontSize="48px" fontWeight="700">
+          <Stack flex={1} direction="row" spacing="16px" alignItems="start">
+            <Text fontSize="48px" fontWeight="700" lineHeight="48px">
               01
             </Text>
             <Text {...textNormalStyle}>
               成为RW实验室社区成员，加入RW实验室社群
             </Text>
           </Stack>
-          <Stack direction="row" spacing="16px">
-            <Text fontSize="48px" fontWeight="700">
+          <Stack flex={1} direction="row" spacing="16px">
+            <Text fontSize="48px" fontWeight="700" lineHeight="48px">
               02
             </Text>
             <Text {...textNormalStyle}>
               根据自己的需求加入感兴趣的社群主题群，积极参与社区活动
             </Text>
           </Stack>
-          <Stack direction="row" spacing="16px">
-            <Text fontSize="48px" fontWeight="700">
+          <Stack flex={1} direction="row" spacing="16px">
+            <Text fontSize="48px" fontWeight="700" lineHeight="48px">
               03
             </Text>
             <Text {...textNormalStyle}>
               了解RW实验室后选择成为社群的贡献者，赚取贝壳的同时，推动社区不断完善与壮大
             </Text>
           </Stack>
-          <Stack direction="row" spacing="16px">
-            <Text fontSize="48px" fontWeight="700">
+          <Stack flex={1} direction="row" spacing="16px">
+            <Text fontSize="48px" fontWeight="700" lineHeight="48px">
               04
             </Text>
             <Text {...textNormalStyle}>
@@ -731,6 +732,9 @@ export default function Home() {
           </Stack>
         </Stack>
         <Button
+          onClick={() => {
+            window.open(links.discord, 'exampleWindow');
+          }}
           width="200px"
           height="60px"
           background="blue.200"

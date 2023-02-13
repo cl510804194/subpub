@@ -8,10 +8,7 @@ import 'swiper/css/pagination';
 import builders from '@/data/build';
 
 import island from '@/assets/images/island.png';
-import rightArrow from '@/assets/images/rightArrow.svg';
-import rightArrowPurple from '@/assets/images/rightArrowPurple.svg';
 import polygon from '@/assets/images/polygon.svg';
-import group1 from '@/assets/images/group1.png';
 import coCreate from '@/assets/images/coCreate.png';
 import system2 from '@/assets/images/system2.png';
 import department from '@/assets/images/department.png';

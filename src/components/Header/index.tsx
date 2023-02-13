@@ -77,7 +77,13 @@ function Index({}: IProps) {
   };
 
   return (
-    <Box zIndex={9999} position="fixed" width="100%" backgroundColor="gray.100">
+    <Box
+      zIndex={9999}
+      position="fixed"
+      width="100%"
+      maxWidth="1920px"
+      backgroundColor={router.asPath == '/party' ? '#EDECFF' : 'gray.100'}
+    >
       <Flex
         justify="space-between"
         alignItems="center"

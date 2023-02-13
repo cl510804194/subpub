@@ -1,13 +1,13 @@
-import Head from "next/head";
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
-import { Box, ChakraProvider } from "@chakra-ui/react";
-import { theme } from "@/theme/theme";
-import { Inter } from "@next/font/google";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Head from 'next/head';
+import '@/styles/globals.css';
+import type { AppProps } from 'next/app';
+import { Box, ChakraProvider } from '@chakra-ui/react';
+import { theme } from '@/theme/theme';
+import { Inter } from '@next/font/google';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
-const inter = Inter({ subsets: ["latin"], weight: "400" });
+const inter = Inter({ subsets: ['latin'], weight: '400' });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -16,6 +16,7 @@ export default function App({ Component, pageProps }: AppProps) {
       className={inter.className}
       maxWidth="1920px"
       color="black.100"
+      margin="0 auto"
     >
       <Head>
         <title>RW</title>
