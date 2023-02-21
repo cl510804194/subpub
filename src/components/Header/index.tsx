@@ -7,12 +7,8 @@ import {
   Link,
   LinkProps,
   TextProps,
-  Button,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-
-import document from '@/assets/images/document.svg';
-import frame from '@/assets/images/frame.png';
 
 export interface IProps {}
 
@@ -40,20 +36,20 @@ const linkActive: LinkProps & TextProps = {
 
 const links = [
   {
-    label: '首页',
+    label: 'Home',
     path: '/',
   },
   {
-    label: '游民市集',
-    path: '/market',
+    label: 'About',
+    path: '/about',
   },
   {
-    label: '游民派对',
-    path: '/party',
+    label: 'Support',
+    path: '/support',
   },
   {
-    label: '共建岛',
-    path: '/land',
+    label: 'Contact',
+    path: '/contact',
   },
 ];
 
@@ -82,7 +78,8 @@ function Index({}: IProps) {
       position="fixed"
       width="100%"
       maxWidth="1920px"
-      backgroundColor={router.asPath == '/party' ? '#EDECFF' : 'gray.100'}
+      backgroundColor={'#ffffff'}
+      // borderBottom="1px solid #000000"
     >
       <Flex
         justify="space-between"
@@ -92,44 +89,10 @@ function Index({}: IProps) {
         margin="0 auto"
       >
         <Flex alignItems="center">
-          <Image src={frame} alt="frame" width="66px" height="36px"></Image>
+          {/* <Image src={frame} alt="frame" width="66px" height="36px"></Image> */}
           <Stack direction="row" spacing="64px" marginLeft={129} height="100%">
             {render()}
           </Stack>
-        </Flex>
-        <Flex flexDirection="row" alignItems="center">
-          <Flex justify="center" alignItems="center">
-            <Image
-              src={document}
-              alt="document"
-              width="18px"
-              height="18px"
-              paddingTop="2px"
-              marginRight="8px"
-            />
-            <Link
-              {...linkStyle}
-              fontSize="14px"
-              lineHeight="17px"
-              color="black.100"
-              paddingBottom="3px"
-            >
-              文档库
-            </Link>
-          </Flex>
-          <Button
-            marginLeft="32px"
-            width="102px"
-            height="36px"
-            borderRadius={0}
-            border="1px solid"
-            borderColor="black.100"
-            background="transparent"
-            textAlign="center"
-            lineHeight="36px"
-          >
-            登录/注册
-          </Button>
         </Flex>
       </Flex>
     </Box>
