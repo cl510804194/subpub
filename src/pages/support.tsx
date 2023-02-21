@@ -1,6 +1,8 @@
 import React from 'react';
 import { Stack, Text, Flex, Img } from '@chakra-ui/react';
 
+import px2vw from '@/utils/px2vw';
+
 import banner6 from '@/assets/images/banner6.webp';
 import banner7 from '@/assets/images/banner7.webp';
 import banner8 from '@/assets/images/banner8.webp';
@@ -38,11 +40,11 @@ const Card = ({ imgSrc, title, desc, onView }: CardProps) => {
   return (
     <Flex
       flexDirection="column"
-      width="290px"
-      height="460px"
+      width={{ base: '100%', md: '290px' }}
+      height={{ base: '100%', md: '460px' }}
       bgColor="rgba(36,36,36,0.25)"
     >
-      <Img width="100%" height="243px" src={imgSrc} />
+      <Img width="100%" height={{ base: '100%', md: '243px' }} src={imgSrc} />
       <Flex
         padding="15px"
         flexDirection="column"
@@ -80,11 +82,10 @@ function Index({}: IProps) {
   return (
     <Stack
       margin="0 auto"
-      width="980px"
-      flexDirection="column"
+      width={{ base: '100%', md: '980px' }}
       alignItems="center"
       as="main"
-      spacing="20px"
+      spacing={{ base: px2vw(2), md: '20px' }}
     >
       <Flex
         justify="center"
@@ -98,7 +99,11 @@ function Index({}: IProps) {
       >
         What we support
       </Flex>
-      <Flex width="100%" justifyContent="space-between">
+      <Flex
+        flexDirection={{ base: 'column', md: 'row' }}
+        width="100%"
+        justifyContent="space-between"
+      >
         {info.map((item) => (
           <Card key={item.title} {...item} />
         ))}

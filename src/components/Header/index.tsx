@@ -10,6 +10,8 @@ import {
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 
+import px2vw from '@/utils/px2vw';
+
 export interface IProps {}
 
 const linkStyle: LinkProps & TextProps = {
@@ -84,13 +86,18 @@ function Index({}: IProps) {
       <Flex
         justify="space-between"
         alignItems="center"
-        height={'102px'}
+        height={{ base: px2vw(60), md: '102px' }}
         maxWidth={'1200px'}
         margin="0 auto"
       >
         <Flex alignItems="center">
           {/* <Image src={frame} alt="frame" width="66px" height="36px"></Image> */}
-          <Stack direction="row" spacing="64px" marginLeft={129} height="100%">
+          <Stack
+            direction="row"
+            spacing={{ base: px2vw(20), md: '64px' }}
+            marginLeft={{ base: px2vw(30), md: 129 }}
+            height="100%"
+          >
             {render()}
           </Stack>
         </Flex>

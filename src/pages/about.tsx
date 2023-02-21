@@ -8,13 +8,14 @@ function Index({}: IProps) {
   return (
     <Stack
       margin="0 auto"
-      width="980px"
-      flexDirection="column"
+      width={{ base: '100%', md: '980px' }}
+      // direction={"column"}
       alignItems="center"
       as="main"
       spacing="2px"
     >
       <Flex
+        flexDirection={{ base: 'column', md: 'row' }}
         justify="center"
         alignItems="center"
         height="48.5px"
@@ -26,9 +27,13 @@ function Index({}: IProps) {
       >
         About WEFACC
       </Flex>
-      <Stack direction="row" width="100%" spacing="2px">
+      <Stack
+        direction={{ base: 'column', md: 'row' }}
+        width="100%"
+        spacing="2px"
+      >
         <Text
-          width="319px"
+          width={{ base: '100%', md: '319px' }}
           padding="14px 20px"
           bgColor="rgba(36,36,36,0.25)"
           fontSize="12px"
@@ -52,7 +57,11 @@ function Index({}: IProps) {
           customer relationships. <br />
           <br />
         </Text>
-        <Img src={banner5} width="100%" height="538px" />
+        <Img
+          src={banner5}
+          width="100%"
+          height={{ base: '100%', md: '538px' }}
+        />
       </Stack>
     </Stack>
   );

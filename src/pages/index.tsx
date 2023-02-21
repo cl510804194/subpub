@@ -1,4 +1,5 @@
 import { Flex, Stack, Text, Img, Box, Divider } from '@chakra-ui/react';
+import px2vw from '@/utils/px2vw';
 
 import banner1 from '@/assets/images/banner1.webp';
 import banner2 from '@/assets/images/banner2.webp';
@@ -32,31 +33,34 @@ export default function Home() {
   return (
     <Stack
       margin="0 auto"
-      width="980px"
+      width={{ base: '100%', md: '980px' }}
       flexDirection="column"
       alignItems="center"
       as="main"
       spacing="2px"
     >
-      <Stack direction="row" spacing="2px">
+      <Stack direction={{ base: 'column', md: 'row' }} spacing="2px">
         {/* left */}
         <Stack direction="column" spacing="2px">
           <Box>
             <Img
               src={banner1}
-              width="651px"
-              height="548px"
+              width={{ base: px2vw(375), md: '651px' }}
+              height={{ base: px2vw(300), md: '548px' }}
               _hover={buttonHover}
             />
           </Box>
 
-          <Stack direction="row" spacing="2px">
+          <Stack direction={{ base: 'column', md: 'row' }} spacing="2px">
             <Flex
-              width="482px"
-              height="55px"
+              width={{ base: '100%', md: '482px' }}
+              height={{ base: px2vw(55), md: '55px' }}
+              // padding={{ base: `0 ${px2vw(5)}`, md: '0' }}
+              // width={'482px'}
+              // height="55px"
               justify="center"
               alignItems="center"
-              fontSize="25px"
+              fontSize={{ base: '20px', md: '25px' }}
               fontWeight="bold"
               backgroundColor="#000000"
               color="#ffffff"
@@ -65,8 +69,11 @@ export default function Home() {
               For Community, By Community
             </Flex>
             <Flex
-              width="166px"
-              height="55px"
+              width={{ base: '100%', md: '166px' }}
+              height={{ base: px2vw(55), md: '55px' }}
+              // padding={{ base: `0 ${px2vw(5)}`, md: '0' }}
+              // width="166px"
+              // height="55px"
               justify="center"
               alignItems="center"
               fontSize="15px"
@@ -82,9 +89,9 @@ export default function Home() {
         {/* right */}
         <Flex flexDirection="column">
           <Stack
-            padding="14px 20px"
+            padding={{ base: `${px2vw(10)} ${px2vw(20)}`, md: '14px 20px' }}
             bgColor="rgba(36,36,36,0.25)"
-            spacing="12px"
+            spacing={{ base: px2vw(12), md: '12px' }}
           >
             <Text fontSize="25px" color="#ffffff">
               WEFA.CC
@@ -102,14 +109,26 @@ export default function Home() {
               {'Read more >'}
             </Text>
           </Stack>
-          <Img src={banner2} />
+          <Img width={{ base: '100%', md: 'inherit' }} src={banner2} />
         </Flex>
       </Stack>
       {/* bottom */}
-      <Stack direction="row" spacing="2px">
-        <Img src={banner3} width="326px" height="274px" />
-        <Img src={banner4} width="326px" height="274px" />
-        <Stack width="326px" direction="column" spacing="2px">
+      <Stack direction={{ base: 'column', md: 'row' }} spacing="2px">
+        <Img
+          src={banner3}
+          width={{ base: '100%', md: '324px' }}
+          height={{ base: '100%', md: '274px' }}
+        />
+        <Img
+          src={banner4}
+          width={{ base: '100%', md: '324px' }}
+          height={{ base: '100%', md: '274px' }}
+        />
+        <Stack
+          width={{ base: '100%', md: '328px' }}
+          direction="column"
+          spacing="2px"
+        >
           <Stack
             spacing="20px"
             justify="center"

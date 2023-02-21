@@ -6,6 +6,7 @@ import { theme } from '@/theme/theme';
 import { Inter } from '@next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import px2vw from '@/utils/px2vw';
 
 const inter = Inter({ subsets: ['latin'], weight: '400' });
 
@@ -27,7 +28,10 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <ChakraProvider theme={theme}>
         <Header />
-        <Box padding="102px 0">
+        <Box
+          padding={{ base: `${px2vw(62)} 0`, md: '102px 0' }}
+          bgColor="#dbdbdb"
+        >
           <Component {...pageProps} />
         </Box>
         {/* <Footer /> */}

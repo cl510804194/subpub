@@ -2,6 +2,7 @@ import React from 'react';
 import { Stack, Text, Flex, Img } from '@chakra-ui/react';
 
 import { buttonHover } from '@/theme/style';
+import px2vw from '@/utils/px2vw';
 
 import wechat from '@/assets/images/wechat.webp';
 import twitter2 from '@/assets/images/twitter2.webp';
@@ -14,11 +15,10 @@ function Index({}: IProps) {
   return (
     <Stack
       margin="0 auto"
-      width="980px"
-      flexDirection="column"
+      width={{ base: '100%', md: '980px' }}
       alignItems="center"
       as="main"
-      spacing="20px"
+      spacing={{ base: px2vw(2), md: '20px' }}
     >
       <Flex
         justify="center"
@@ -32,10 +32,14 @@ function Index({}: IProps) {
       >
         Contact US
       </Flex>
-      <Flex bgColor="#dbdbdb">
+      <Flex
+        flexDirection={{ base: 'column', md: 'row' }}
+        width="100%"
+        bgColor="#dbdbdb"
+      >
         <Stack
           spacing="30px"
-          width="327px"
+          width={{ base: '100%', md: '327px' }}
           height="363px"
           justifyContent="center"
           alignItems="center"
@@ -46,7 +50,7 @@ function Index({}: IProps) {
         </Stack>
         <Stack
           spacing="30px"
-          width="327px"
+          width={{ base: '100%', md: '327px' }}
           height="363px"
           justifyContent="center"
           alignItems="center"
@@ -60,7 +64,7 @@ function Index({}: IProps) {
         </Stack>
         <Stack
           spacing="30px"
-          width="327px"
+          width={{ base: '100%', md: '327px' }}
           height="363px"
           justifyContent="center"
           alignItems="center"
