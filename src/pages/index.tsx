@@ -138,6 +138,7 @@ export default function Home() {
             bgColor="rgba(36,36,36,0.25)"
             fontSize="25px"
             color="#ffffff"
+            _hover={buttonHover}
           >
             <Text>Incubation</Text>
             <Stack direction="row" spacing="10px">
@@ -154,6 +155,7 @@ export default function Home() {
             bgColor="rgba(36,36,36,0.25)"
             fontSize="25px"
             color="#ffffff"
+            _hover={buttonHover}
           >
             <Text>Follow us</Text>
             <Stack direction="row" spacing="10px">
