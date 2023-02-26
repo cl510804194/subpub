@@ -33,10 +33,12 @@ function Index({}: IProps) {
         spacing="2px"
       >
         <Text
-          width={{ base: '100%', md: '319px' }}
+          width={{ base: '100%', md: '311px' }}
+          flexShrink={0}
           padding="14px 20px"
           bgColor="rgba(36,36,36,0.25)"
-          fontSize="12px"
+          fontSize="15px"
+          lineHeight="1.4em"
           color="#242424"
         >
           WEFA.CC is short from Web3 Fans Common Community, Called 萬發公社 in
@@ -52,7 +54,7 @@ function Index({}: IProps) {
           bi-directional relationships between brands and customers possible
           (without an intermediary). <br />
           <br />
-          ​ Meet with our team of Web3 experts and learn more about how emerging
+          ​Meet with our team of Web3 experts and learn more about how emerging
           Web3 technologies can revolutionize your community development and
           customer relationships. <br />
           <br />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   Flex,
@@ -10,20 +10,21 @@ import {
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 
+import logo from '@/assets/images/logo.png';
 import px2vw from '@/utils/px2vw';
+import { buttonHover } from '@/theme/style';
 
 export interface IProps {}
 
 const linkStyle: LinkProps & TextProps = {
-  color: 'black.40',
-  fontSize: '14px',
-  lineHeight: '17px',
+  color: '#D1D1D1',
+  fontSize: '16px',
   fontStyle: 'normal',
-
+  textDecoration: 'none',
   _hover: {
     textDecoration: 'none',
     color: 'black.80',
-    borderBottom: '1px solid',
+    // borderBottom: '1px solid',
     borderColor: 'black.80',
     paddingBottom: '2px',
   },
@@ -31,9 +32,10 @@ const linkStyle: LinkProps & TextProps = {
 
 const linkActive: LinkProps & TextProps = {
   color: 'black.100',
-  borderBottom: '1px solid',
+  // borderBottom: '1px solid',
   borderColor: 'black.100',
   paddingBottom: '2px',
+  textDecoration: 'none',
 };
 
 const links = [
@@ -57,12 +59,30 @@ const links = [
 
 function Index({}: IProps) {
   const router = useRouter();
+  const [scrollTop, setScrollTop] = useState(0);
+
+  useEffect(() => {
+    function listener() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      setScrollTop(scrollTop);
+    }
+    window.addEventListener('scroll', listener);
+    return () => {
+      window.removeEventListener('scroll', listener);
+    };
+  }, []);
 
   const render = () => {
-    return links.map((item) => {
+    return links.map((item, index) => {
       return (
         <Link
           key={item.path}
+          height="23px"
+          width={{ base: px2vw(90), md: '199px' }}
+          margin={{ base: `${px2vw(10)} 0`, md: '10px 0' }}
+          borderRight={index !== links.length - 1 ? '1px solid #000' : ''}
+          textAlign="center"
+          lineHeight="23px"
           {...(router.pathname === item.path
             ? { ...linkStyle, ...linkActive }
             : linkStyle)}
@@ -75,15 +95,30 @@ function Index({}: IProps) {
   };
 
   return (
-    <Box
+    <Flex
       zIndex={9999}
+      flexDirection="column"
+      justifyContent="center"
+      alignItems="center"
       position="fixed"
       width="100%"
       maxWidth="1920px"
       backgroundColor={'#ffffff'}
-      // borderBottom="1px solid #000000"
+      opacity={scrollTop > 100 ? 0 : 1 - scrollTop / 100}
     >
       <Flex
+        justifyContent="center"
+        alignItems="center"
+        width="100%"
+        height="150px"
+        borderBottom="1px solid #000"
+        _hover={buttonHover}
+      >
+        <Image height="101px" src={logo} alt="" />
+      </Flex>
+      {/* links */}
+      <Flex height="100%">{render()}</Flex>
+      {/* <Flex
         justify="space-between"
         alignItems="center"
         height={{ base: px2vw(60), md: '102px' }}
@@ -91,7 +126,6 @@ function Index({}: IProps) {
         margin="0 auto"
       >
         <Flex alignItems="center">
-          {/* <Image src={frame} alt="frame" width="66px" height="36px"></Image> */}
           <Stack
             direction="row"
             spacing={{ base: px2vw(20), md: '64px' }}
@@ -101,8 +135,8 @@ function Index({}: IProps) {
             {render()}
           </Stack>
         </Flex>
-      </Flex>
-    </Box>
+      </Flex> */}
+    </Flex>
   );
 }
 export default Index;

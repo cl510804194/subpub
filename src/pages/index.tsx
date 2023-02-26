@@ -37,11 +37,11 @@ export default function Home() {
       flexDirection="column"
       alignItems="center"
       as="main"
-      spacing="2px"
+      spacing="4px"
     >
-      <Stack direction={{ base: 'column', md: 'row' }} spacing="2px">
+      <Stack direction={{ base: 'column', md: 'row' }} spacing="4px">
         {/* left */}
-        <Stack direction="column" spacing="2px">
+        <Stack direction="column" spacing="4px">
           <Box>
             <Img
               src={banner1}
@@ -51,7 +51,7 @@ export default function Home() {
             />
           </Box>
 
-          <Stack direction={{ base: 'column', md: 'row' }} spacing="2px">
+          <Stack direction={{ base: 'column', md: 'row' }} spacing="4px">
             <Flex
               width={{ base: '100%', md: '482px' }}
               height={{ base: px2vw(55), md: '55px' }}
@@ -89,17 +89,17 @@ export default function Home() {
         {/* right */}
         <Flex flexDirection="column">
           <Stack
-            padding={{ base: `${px2vw(10)} ${px2vw(20)}`, md: '14px 20px' }}
+            padding={{ base: `${px2vw(10)} ${px2vw(20)}`, md: '14px 35px' }}
             bgColor="rgba(36,36,36,0.25)"
-            spacing={{ base: px2vw(12), md: '12px' }}
+            spacing={{ base: px2vw(12), md: '13px' }}
           >
-            <Text fontSize="25px" color="#ffffff">
+            <Text fontSize="25px" fontWeight="800" color="#ffffff">
               WEFA.CC
             </Text>
-            <Text fontSize="17px" lineHeight="1.4em" color="#000000">
+            <Text fontSize="17px" lineHeight="1.4em" color="rgb(36,36,36)">
               WEFA.CC is short from Web3 Fans Common Community.
             </Text>
-            <Text fontSize="17px" lineHeight="1.4em">
+            <Text fontSize="17px" lineHeight="1.4em" color="rgb(36,36,36)">
               WEFA.CC is facing the fast-growing and rapidly changing Web3
               market, launching a comprehensive enterprise service model and
               related businesses in the Web3 field.
@@ -113,7 +113,7 @@ export default function Home() {
         </Flex>
       </Stack>
       {/* bottom */}
-      <Stack direction={{ base: 'column', md: 'row' }} spacing="2px">
+      <Stack direction={{ base: 'column', md: 'row' }} spacing="4px">
         <Img
           src={banner3}
           width={{ base: '100%', md: '324px' }}
@@ -127,7 +127,7 @@ export default function Home() {
         <Stack
           width={{ base: '100%', md: '328px' }}
           direction="column"
-          spacing="2px"
+          spacing="4px"
         >
           <Stack
             spacing="20px"
@@ -150,7 +150,7 @@ export default function Home() {
             spacing="20px"
             justify="center"
             alignItems="center"
-            height="136px"
+            height="134px"
             width="100%"
             bgColor="rgba(36,36,36,0.25)"
             fontSize="25px"
