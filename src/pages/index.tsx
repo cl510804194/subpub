@@ -1,7 +1,7 @@
 import { Flex, Stack, Text, Img, Box, Divider } from '@chakra-ui/react';
 import px2vw from '@/utils/px2vw';
 
-import banner1 from '@/assets/images/banner1.webp';
+import banner1 from '@/assets/images/banner1.jpeg';
 import banner2 from '@/assets/images/banner2.webp';
 import banner3 from '@/assets/images/banner3.webp';
 import banner4 from '@/assets/images/banner4.webp';
